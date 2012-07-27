@@ -1,4 +1,7 @@
 
+#ifndef __FCDlib_H
+#define __FCDlib_H
+
 typedef enum 
 {
 	TLGE_N5_0DB=0,
@@ -243,6 +246,7 @@ _ex int FCD_set_IFFilter(TUNERIFFILTERENUM setting);
 _ex int FCD_set_IFGain5(TUNERIFGAIN5ENUM setting);
 _ex int FCD_set_IFGain6(TUNERIFGAIN6ENUM setting);
 
+#endif
 
 
 

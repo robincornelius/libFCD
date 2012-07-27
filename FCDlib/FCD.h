@@ -1,3 +1,5 @@
+#ifndef __FCD_H
+#define __FCD_H
 
 #include "FCDlib.h"
 
@@ -328,3 +330,5 @@ static const COMBOITEMSTRUCT _cisIFGain6[]=
 #define FCD_HID_CMD_SET_IF_GAIN4     123
 #define FCD_HID_CMD_SET_IF_GAIN5     124
 #define FCD_HID_CMD_SET_IF_GAIN6     125
+
+#endif

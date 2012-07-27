@@ -1,9 +1,6 @@
 // FCDlib.cpp : Defines the exported functions for the DLL application.
 //
 
-#include "stdafx.h"
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "tchar.h"
