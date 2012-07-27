@@ -12,4 +12,4 @@ Release/*
 *.user
 *.sdf
 *.suo
-
+ipch/*
