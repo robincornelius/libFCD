@@ -1,0 +1,15 @@
+*.tlog
+*.exp
+*.ilk
+*.pdb
+*/Debug/*
+*/Release/*
+Debug/*
+Release/*
+*.obj
+*.idb
+*.log
+*.user
+*.sdf
+*.suo
+

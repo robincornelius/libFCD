@@ -1,0 +1,23 @@
+LIBRARY   FCDlib
+EXPORTS
+    FCD_init   @1
+    FCD_set_frequency @2
+    FCD_set_defaults @3
+    FCD_set_RF_LNA @4
+	FCD_set_LNA_Enhance @5
+	FCD_set_Band @6
+	FCD_set_RFFilter @7
+	FCD_set_MixerGain @8
+	FCD_set_BiasCurrent @9
+	FCD_set_MixerFilter @10
+	FCD_set_IFGain1 @11
+	FCD_set_IFGainMode @12
+	FCD_set_IFRCFilter @13
+	FCD_set_IFGain2 @14
+	FCD_set_IFGain3 @15
+	FCD_set_IFGain4 @16
+	FCD_set_IFFilter @17
+	FCD_set_IFGain5 @18
+	FCD_set_IFGain6 @19
+	FCD_close @20
+
