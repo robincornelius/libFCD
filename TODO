@@ -1,0 +1,7 @@
+TODO
+----
+
+Currently the command line app only exposes the abality to set defaults, set frequency and get version
+For completness we need to be able to set all gain and other parameters. The lib has these functions but
+i've not added them to the command line options.
+
