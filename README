@@ -15,6 +15,7 @@ Requirments
 cmake
 libusb-1.0
 libudev
+libargtable2
 
 in the source directory, create a build folder then :-
 
@@ -28,6 +29,9 @@ That installs to /usr/local/bin and /usr/local/lib
 
 you may need to do
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+if you want to install elsewhere eg /usr not /usr/local then run the cmake line as thus :-
+  cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr ..
 
 to find the shared libs in the /usr/local location, some distros set this up 
 for you but on the RPi Radperian Wheezy it was not set.
