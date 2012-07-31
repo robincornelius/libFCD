@@ -1,4 +1,3 @@
-
 #ifndef __FCDlib_H
 #define __FCDlib_H
 
@@ -217,14 +216,20 @@ typedef enum
 } TUNERIFGAIN6ENUM;  
 
 
+#ifdef _CPP
 #ifdef FCDLIB_EXPORTS
 #define _ex /**/
 #else
 #define _ex extern "C"
 #endif 
+#else
+#define _ex /**/
+#endif
 
 _ex int FCD_init();
 _ex void FCD_close();
+
+_ex char * FCD_getversion();
 
 _ex int FCD_set_frequency(int frequency);
 _ex void FCD_set_defaults();

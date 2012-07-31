@@ -1,0 +1,89 @@
+libFCD is a library for controlling the Funcube pro dongle and a command
+line utility for demonstrating the library. Its main goal was to use the 
+FCD on a Rasperry PI. Inital work appears to be successful and the FCD
+can be controlled and audio data saved. Its not clear if the PI has enough
+CPU to process the data via GNU Radio or some other tools and that is work
+to be done.
+
+
+Building the code
+
+So far only tested on the Raspberry Pi running Rasperian Wheezy
+
+Requirments 
+
+cmake
+libusb-1.0
+libudev
+
+in the source directory, create a build folder then :-
+
+  mkdir build
+  cd build
+  cmake -G "Unix Makefiles" ..
+  make
+  make install
+
+That installs to /usr/local/bin and /usr/local/lib
+
+you may need to do
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+to find the shared libs in the /usr/local location, some distros set this up 
+for you but on the RPi Radperian Wheezy it was not set.
+
+This may also work with some hacking on windows/mac, hidapi fully supports 
+linux/mac and windows, so apart from my bad code in the lib, it 
+should work.
+
+*********************************************************************
+
+libFCD Copyright(c) 2012 Robin Cornelius <robin.cornelius@gmail.com>
+
+libFCD is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+**********************************************************************
+
+A large chunk of header files, structs and basic function call layout 
+of the lib was taken directly from the qthid by Alexandru Csete. Which
+saved me a bunch of work and gave me a nice starting point. 
+
+http://sourceforge.net/projects/qthid
+
+qthid is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+***************************************************************************
+
+hidapi was downloaded from http://www.signal11.us/oss/hidapi/ and is avaiable
+under the GPLV3 the BSD or a generic permissive licence as documented in the
+hidapi-0.7.0 folder. 
+
+The only change I have made to this folder is to add a CMakeLists.txt file as
+I am using cmake for the entire build process
+
+
+
+

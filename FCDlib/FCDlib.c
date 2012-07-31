@@ -3,11 +3,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "tchar.h"
-#include "fcd.h"
+#include <stdint.h>
+//#include "tchar.h"
+#include "FCD.h"
 #include "HID.h"
 
-#define bool int
+//#define bool int
+
+char szVersionRead[61];
 
 COMBOSTRUCT _acs[]=
 {
@@ -44,13 +47,13 @@ int FCD_set_frequency(int freq)
 
 	if(HIDWriteCommand(255,3,freqbytes))
 	{
-		printf("Success FCD frequency set\n");
-		return 1;
+		//printf("Success FCD frequency set\n");
+		return 0;
 	}
 	else
 	{
-		printf("Error, FCD frequency NOT set\n");
-		return 0;
+		//printf("Error, FCD frequency NOT set\n");
+		return -1;
 	}
 
 }
@@ -62,11 +65,11 @@ void FCD_set_defaults()
 	{
 		char u8;
 		HIDWriteCommand(pcs->u8CommandGet,1,(char*)&pcs->nIdxDefault);
-		printf("HID Write %d YX %d\n",pcs->u8CommandSet,pcs->nIdxDefault);
+		//printf("HID Write %d YX %d\n",pcs->u8CommandSet,pcs->nIdxDefault);
 		HIDReadCommand(pcs->u8CommandGet,1,&u8);
 		if(u8!=pcs->nIdxDefault)
 		{
-			printf("Default set failed\n");
+			//printf("Default set failed\n");
 		}
 		pcs++;
 	}
@@ -86,19 +89,22 @@ void readall()
 
 int FCD_init()
 {
-	char szVersionRead[61];
-	szVersionRead[60]=0;
-
 	if(HIDopen()!=0)
 		return -1;
 	
 	HIDQuery(60,szVersionRead);
-	printf("Version: %s\n",szVersionRead);
+	szVersionRead[60]=0;
+	//printf("Version: %s\n",szVersionRead);
 	//TODO version check
 
 	readall();
 
 	return 0;
+}
+
+char * FCD_getversion()
+{
+	return((char*)szVersionRead);
 }
 
 void FCD_close()

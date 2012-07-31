@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include <tchar.h>
+#include <string.h> // memcpy
 
 #include "hidapi.h"
 #include "FCD.h"
@@ -20,22 +20,22 @@ int HIDopen()
 
 	if(handle==0)
 	{
-		printf("Error bad handle, device not found\n");
+		//printf("Error bad handle, device not found\n");
 		return -1;
 	}
 
 	// Read the Manufacturer String
-	res = hid_get_manufacturer_string(handle, wstr, MAX_STR);
-	printf("Manufacturer String: %ls\n", wstr);
+	//res = hid_get_manufacturer_string(handle, wstr, MAX_STR);
+	//printf("Manufacturer String: %ls\n", wstr);
 
 	// Read the Product String
-	res = hid_get_product_string(handle, wstr, MAX_STR);
-	printf("Product String: %ls\n", wstr);
+	//res = hid_get_product_string(handle, wstr, MAX_STR);
+	//printf("Product String: %ls\n", wstr);
 
 	// Read the Serial Number String
-	res = hid_get_serial_number_string(handle, wstr, MAX_STR);
-	printf("Serial Number String: %ls", wstr);
-	printf("\n");
+	//res = hid_get_serial_number_string(handle, wstr, MAX_STR);
+	//printf("Serial Number String: %ls", wstr);
+	//printf("\n");
 
 	return 0;
 
